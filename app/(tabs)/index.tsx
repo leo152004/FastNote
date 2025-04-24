@@ -1,4 +1,4 @@
-import {Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, Image, StyleSheet, TouchableOpacity, useColorScheme} from 'react-native';
 
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
@@ -8,6 +8,7 @@ import {useNavigation} from "expo-router";
 
 export default function HomeScreen() {
     const navigation = useNavigation();
+    let isDarkMode = useColorScheme() === 'dark';
   return (
       <><ParallaxScrollView
           headerBackgroundColor={{light: '#A1CEDC', dark: '#292929'}}
@@ -22,7 +23,7 @@ export default function HomeScreen() {
         </Text>
       </ParallaxScrollView>
           <TouchableOpacity
-              style={styles.fab}
+              style={[styles.fab, {backgroundColor: isDarkMode ? '#222222' : "#e8e8e8"}]}
               onPress={() => navigation.navigate('AddNote' as never)}
           >
           <MaterialIcons name="add" size={28} color="white"/>
@@ -47,7 +48,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 20,
         bottom: 20,
-        backgroundColor: '#292929',
         borderRadius: 30,
         width: 60,
         height: 60,
