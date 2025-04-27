@@ -19,8 +19,8 @@ Frontend: React Native (Expo) / Web (Optional later)
 
 Backend: TBD (but likely support for mongoDB)
 
-##🔧 Installation
-###Clone the repo:
+## 🔧 Installation
+### Clone the repo:
 ```bash
 git clone https://github.com/leo152004/FastNote.git
 cd FastMote
